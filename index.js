@@ -24,10 +24,10 @@ app.get('/', (req, res) => {
     res.send(courses)
 })
 
-app.put('/courses', (req, res) => {
-    const course = courses.find(item => item.id === req.body.id)
+app.put('/courses/:id', (req, res) => {
+    const course = courses.find(item => item.id === req.params.id)
     if (course) {
-        course.title = req.body.title
+        course.title = 'req.body.title'
         res.send(courses)
     } else {
         res.status(404).send('no records with this query')
