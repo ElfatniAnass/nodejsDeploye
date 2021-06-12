@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
 
 app.put('/courses', (req, res) => {
     const course = courses.find(item => item.id === req.body.id)
+    console.log(course)
     if (course) {
         course.title = req.body.title
         res.send(courses)
